@@ -1,0 +1,31 @@
+
+
+SEQUENCE_NAME
+    Text // Text displayed by the text engine
+        // Blank line
+    
+    (flag_identifier="flag_value") // Flag declaration
+    
+    // $ is the display token, it will display something inside of the text that isn't text
+    $(flag_identifier) // Displays the value of a flag
+    $modifier {
+        Text here
+        $(flag_value) //flag values too!
+    } // Uses a modifier on the given block of text
+    $[block] // Displays something that isn't text inside of the text engine
+
+    //Blocks and modifiers can use arguments
+    $`sleep(2.5)`
+    $[seperator(20)] //these arguments can be default or required
+
+    $`function_name` //Runs some bit of Rust code on the sequence.
+    $`function_parameters(argument_one, argument_two)` //They can take parameters aswell.
+
+    Look! $[rect(20,20)] and wait$speed(1){...}$`set_rect_to_red` voila! // You can run code and display items between text aswell.
+    How it fits might be a different story...
+
+    You can also prompt the user to pick from several options
+        * Pick me! //The asterist declares that this is one option. The space between it and the text is necessary.
+        *(flag_identifier="you picked option two") I can set flags! //Options can run code if selected. This one sets a flag.
+        *ALTERNATIVE_SEQUENCE I can move to other sequences // Options can switch sequences
+    

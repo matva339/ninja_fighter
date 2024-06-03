@@ -1,0 +1,133 @@
+---
+
+INTRO_SEQUENCE
+    $centered{
+        Welcome to GAMENAMEPLACEHOLDER. VERS. WIPS29.
+        This game follows the story of Matthew.
+        You'll be given number options to make choices. Please make your selection from the list of options given to you.
+        When you're ready to begin, hit 'ENTER'.
+    }
+    $`empty_prompt` //waits until the user hits enter
+    STORY_INTRODUCTION
+
+STORY_INTRODUCTION
+    There once was a man named Matthew. He lived within the Eiffel Tower. One day, something very strange happened.
+    
+    $[seperator]
+        *INITIAL_INVESTIGATION Investigate
+    #has_ending {
+        *LIST_ENDINGS List the achived endings
+    }
+    #has_any_item {
+        *BRING_ITEM Bring an item
+    }       
+    #has_all_endings {
+        *DO_NOTHING Do nothing about it
+    }
+
+
+INITIAL_INVESTIGATION
+    Matthew crawled out of his sleeping place to find that the people below were holding a community chili testing
+    picnic in the park nearby. He could make out the shapes of chili pots, some people, and a large pond.
+    $[seperator]
+        *LEAVE_TOWER_GET_CHILI Go to the chili
+        *LEAVE_TOWER_HAVE_CONVERSATION Go engage in normal human conversation
+        *GRAND_EXIT_OF_TOWER Leap off of the tower into the pond
+        *LEAVE_TOWER_GET_CHILI_MORE Go and test every single chili 
+        
+LEAVE_TOWER_GET_CHILI
+    Matthew felt compeled. He felt that he had to go to the chili. He climbd down his tower abode and slowly made
+    his way to the park... There it was. There Matthew saw the most beautiful thing his beady little eyes had ever
+    looked upon. There, was Le Or Chile
+    $[seperator]
+        *CHILI_JUMP_IN_POT Jump in the pot
+        *CHILI_EAT_WITH_SPOON Use one of the serving spoons like a normal person
+        *CHILI_THOUGHTFUL_INSPECT Inspect the chili closer
+
+CHILI_JUMP_IN_POT
+    Matthew was unable to resist, this may be his only oppurtunity. He looked upon the large pot before him, big
+    enough to fit a wheelbarrow. He steped a few paces backwards, as a few people turned to look at what he was doing.
+    He got a running start, and he leaped! He yelled out into the sky, 'WHAHOOIE!!!!' The people slowly watched him in
+    immense surprise, and terror, as he landed into the chili. The chili was flung everywhere by the splash, those near where he jumped
+    were blinded, some with irreversable damage, most of the families who had come to take part in the chili tasting were
+    traumatized, and several people were on the phone with the authorities. But none of that mattered to Matthew. Because, for a           
+    brief, fleeting moment in time, Matthew got to live his dream.
+    $[seperator]
+    Ending 1 of x - You got the Very Hot Tub ending! //ENDINGENDINGENDINGENDINGENDINGENDINGENDINGENDINGENDINGENDINGENDINGENDINGENDINGENDINGENDINGENDING
+    $[seperator]
+    $`ending(1)` //ending 1 waits for the user to hit enter and clears the screen, then returns to INITIAL_INVESTIGATION.
+    
+CHILI_EAT_WITH_SPOON
+    Matthew held himself back. As much as he wanted to jump in that pot, he decided he would use the serving spoons that were supplied
+    as to not pull too much attention to himself. Matthew was a vigilante after all.
+    He grabbed a plastic spoon with his right hand, and clasped it in his fist. He shakily lowered the spoon into the chili, and brought
+    it back up to take a bite. Matthew spoke. 'Huh. This chili is pretty bland-' *BWOOOOM!* Matthew then exploded into glitter.
+    $[seperator]
+    Ending 5 of x - You got the Oh, That Chili Was Trapped ending! //ENDINGENDINGENDINGENDINGENDINGENDINGENDINGENDINGENDINGENDINGENDINGENDINGENDINGENDINGENDINGENDING
+    $[seperator]
+    $`ending(5)`
+    
+CHILI_THOUGHTFUL_INSPECT
+    Matthew decided to more closely inspect the chili. As he grazed his eyes overtop the shimmering surface, he saw a fly swoop down and land
+    on the chili. Matthew was disgusted. He grabbed the pot of chili, looked at the fly, and he said, 'You are an abomination.' Matthew then
+    screamed with rage as he threw the pot of chili with all of his strength, straight into the sun.
+    $[seperator]
+    Ending 10 of x - You got the Fly Fly Away ending!")#ENDINGENDINGENDINGENDINGENDINGENDINGENDINGENDINGENDINGENDINGENDINGENDINGENDINGENDINGENDINGENDI
+    $[seperator]
+    `ending(10)`
+    
+LEAVE_TOWER_HAVE_CONVERSATION
+    Matthew thought that he would take this oppurtunity to engage in social activity. He hardly ever got out anymore, so he saw this as
+    a perfect chance. Matthew climbed out of his fun little home, and entered the park. He looked around and saw three potential persons
+    to talk to. There was a small boy with a interesting looking box, a large muscular man, and a normal looking guy.
+        *CONVERSE_BOX_BOY Talk to the boy
+        *CONVERSE_MUSCLE_MAN Talk to the muscular man
+        *CONVERSE_REGULAR_GUY Talk to the guy
+
+CONVERSE_BOX_BOY
+    Matthew walked up to the small boy. 'Hi there little boy, what do you have there?' He asked. The boy responded, in the deepest voice Matthew
+    had ever heard, 'Right here I have a self-sustaining ecosystem of foreign metal-eating beetles. If you don't surrender and come with us, I will
+    release them from this box and they will destroy your home, the Eiffel Tower. Afterwards they will wreck complete havoc on the entirety of
+    France. If you do agree to come along with us, we'll spare the Eiffel Tower, and France will go on peacefully.' Matthew couldn't belive what he
+    was hearing. This was terrible. Be he had a feeling he knew who was behind this... 'So, what are you going to choose Matthew? I'll give
+    you ten seconds to pick.' $[prompt_options] Matthew couldn't believe he had fallen for one of their feindish tricks again. He looked around
+    the chili tasting event, and watched every person there reveal a tattoo of a fish. He knew these people, they meant buisiness. But he also
+    knew their management was never far away. If he could figure a way out of this, maybe he could take down the organization for good.
+    His thoughts were interrupted. 'Tick tock Matthew! What'll it be?'
+    `clock(10)`
+    $[seperator]
+        *BOX_BOY_SURRENDERR Surrender
+        *BOX_BOY_BIDE Bide for time
+    [Failed to answer in time] //this is not a block
+
+BOX_BOY_SURRENDERR
+    Matthew bent down on his knees and held his wrists out towards the boy. He stared at him with strong emotions behind his eyes. 'Ah, good choice.' The boy grabbed
+    strange pair of handcuffs and placed them on Matthews wrists. 'You are hereby under arrest for crimes against our organization. You will spend time in our prison
+    until management feel that you've learned your place.' The boy pulled out what looked like a normal TV remote. He bent down and whispered, 'See you around Matthew.' He
+    pushed a button on the remote, and Matthew began to feel tingly and odd. Before he could figure out what was going on, everything around him was fuzzy, and he was
+    vanishing from the park, appearing in some strange new room. He was sligthly nauseous from whatever just happened to him, and he took a moment to get his bearings. Once
+    he felt better, he looked around, and saw that he was in a solid walled-in room with nothing but an empty bucket, a dirty sink, and a speaker built in to the wall.
+    On the floor in front of him there was a scrap of paper. He picked it up and looked at it. It was covered it strange scrawled writing. Matthew began to read
+    the note off to himself. 'ThE WaLLs ArE ThIn. BrEAk ThEm. 2093088372619-28' Weird.
+    $[seperator]
+        *JAIL_WALLBREAK 'Well, I'll break the walls I guess'
+        *JAIL_REHYDRATE Drink some water
+        *JAIL_RELAX Just enjoy your time here
+
+JAIL_WALLBREAK
+    Matthew decided that he would do what the note said, and he would break the walls. Despite his handcuffs, he picked up the bucket from the ground, and he
+    swung it at one of the walls. To his surprise, the wall didn't just break, it fell over flat like a cardboard cut-out. On the other side of the flat wall what seemed
+    to be a large, empty, abandoned library. The room was eerily dark, and it was totally empty besides a couple of chairs that were randomly placed, one of which was knocked over.
+    'Where the heck am I?' Matthew wondered to himself aloud. His words reverberated off the walls. He began to walk around. He saw a large double door on the
+    opposite end of the room, and there was an exit sign above it. Suddenly, Matthew heard a sound behind him, and turned to see an elevator door with a lit-up arrow
+    above it pointing down, signifying that an elevator was on it's way. It was slowly getting audibly closer.
+    $[seperator]
+        *LIBRARY_WAIT Wait at the elevator
+        *LIBRARY_HIDE Hide
+        *LIBRARY_RUN Run
+    
+    
+
+BOX_BOY_BIDE
+
+LIST_ENDINGS
