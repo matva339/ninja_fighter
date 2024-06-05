@@ -1,11 +1,27 @@
-# Ninja Fighter [Prototype]
-### A project by Jarten
+# Ninja Fighter Engine
+## I think I'm just sticking with this as the engine name :D
 
-**This readme is outdated! I havent gotten around to updating it just yet, but crucial details is that I use ggez and bevy_ecs now, and am still working on the engine.**
+A game engine that prioritizes flexibility and ease of development.
 
-This project is a means to really dive head first into a new game dev experience, where I can learn to build a game from the ground up.
-Unlike the last game engine I built myself, I'm making this one in Rust. Trying to get things to even render with Python was a mess.
-~~This project uses [https://github.com/hecrj/coffee](coffee) to do the super heavy lifting, handing off direct GPU control, but otherwise the rest of the functionality is handled by me.~~
+To use it, it requires a bit of effort in getting it set up.
 
-Currently in prototyping phase, where I build the bare minimum and try to get something working. Also known as a Minimum Viable Product, or similar. 
-Reach out if you have anything to say about this!
+To make a game with it, first create a new package and add the following code to the binary file:
+```
+static ENGINE_CONFIG: engine::EngineConfig = engine::EngineConfig::default();
+
+fn main() {
+    let (mut context, event_loop) = // you can use the engine re-export of ggez, though I reccomend adding it anyways
+        engine::ggez::ContextBuilder::new("name_of_game", "Author Name")
+            .build()
+            .expect("could not build context?!");
+
+    let mut game_root = engine::GameRoot::new(&mut context, &ENGINE_CONFIG)
+        .expect("expected no errors on game root initialization");
+
+    editor::console::hook_emergency_panic_handler(&mut game_root);
+
+    engine::ggez::event::run(context, event_loop, game_root);
+}
+```
+
+From there, dive into the engine documentation to feel your way around all of the features of the engine.
